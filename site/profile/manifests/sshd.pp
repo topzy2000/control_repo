@@ -86,7 +86,7 @@ class profile::sshd {
         owner  => 'root',
         group  => 'root',
         mode   => '0640',
-        source => 'puppet:///sshd',
+        source => 'puppet:///modules/docs/sshd',
         notify => Service['sshd'],
       }
     }

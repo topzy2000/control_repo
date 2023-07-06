@@ -5,9 +5,9 @@ days_to_patch=$(/usr/bin/bc <<< "scale=0; 90 - ($(/bin/date +%s) - $(/usr/bin/st
 echo
 echo temioye host information
 echo "========================="
-echo "    Hostname: <%= @fqdn %> (<%= @address %>)"
-echo "    Platform: <%= @virtual %> | CPU Cores: <%= @physicalcount %>"
+echo "    Hostname: <%= @fqdn %> (<%= @ip %>)"
+echo "    Platform: <%= @virtual %> | CPU Cores: <%= @cores %>"
 echo "  Memory Tot: $(awk '/MemTotal/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo) M | Memory Free: $(awk '/MemFree/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo) M"
 echo "    Swap Tot: $(awk '/SwapTotal/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo) M | Swap Free: $(awk '/SwapFree/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo) M"
-echo "          OS: <%= @description %>"
+echo "          OS: <%= @distro %>"
 echo "        Load: $(awk '{print $1, $2, $3}' /proc/loadavg) | Uptime: $(awk '{print(int($1/60/60/24)"d",int($1/60/60%24)"h",int($1/60%60)"m",int($1%60)"s")}' /proc/uptime)"

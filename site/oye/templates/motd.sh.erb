@@ -1,7 +1,4 @@
 #!/bin/bash
-
-days_to_patch=$(/usr/bin/bc <<< "scale=0; 90 - ($(/bin/date +%s) - $(/usr/bin/stat -c%Z /etc/issue))/86400")
-
 echo
 echo temioye host information
 echo "========================="

@@ -1,7 +1,6 @@
 echo temioye host information
 echo "========================="
-echo "    Hostname: <%= @fqdn %> (<%= @networking.ip %>)"
-echo "    Platform: <%= @virtual %> | CPU Cores: <%= @processors %>"
+echo "    Hostname: <%= @fqdn %> (<%= @ipaddress %>)"
 echo "    Platform: <%= @virtual %> | CPU Cores: "
 echo "  Memory Tot: $(awk '/MemTotal/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo) M | Memory Free: $(awk '/MemFree/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo) M"
 echo "    Swap Tot: $(awk '/SwapTotal/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo) M | Swap Free: $(awk '/SwapFree/ {printf( "%.2f\n", $2 / 1024 )}' /proc/meminfo) M"

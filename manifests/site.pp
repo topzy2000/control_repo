@@ -6,3 +6,4 @@ node 'puppetmaster02.temioye.com' {
 node /^node/ {
   include role::app_server
 }
+hiera_include('classes')

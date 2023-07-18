@@ -1,13 +1,17 @@
 ---
 version: 5
-
+defaults:
+  datadir: "/etc/puppetlabs/code/environments/%{::environment}/hieradata"
+  data_hash: yaml_data
 hierarchy:
   - name: "Encrypted data"
     lookup_key: eyaml_lookup_key
     paths:
-      - "nodes/%{trusted.certname}.yaml"
-      - "os/%{facts.os.family}.yaml"
-      - "common.yaml"
+      - "node/%{trusted.certname}.eyaml"
+      - "role/%{::role}.eyaml"
+      - "location/%{::location}.eyaml"
+      - common
+
     options:
       pkcs7_private_key: /etc/puppetlabs/puppet/eyaml/private_key.pkcs7.pem
       pkcs7_public_key: /etc/puppetlabs/puppet/eyaml/public_key.pkcs7.pem

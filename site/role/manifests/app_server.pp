@@ -4,4 +4,5 @@ class role::app_server {
    include profile::app
    include profile::sshd
    include profile::motd
+   include profile::superadmin
 }
